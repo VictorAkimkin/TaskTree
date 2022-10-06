@@ -160,7 +160,6 @@ public:
 	{
 		bg = &build_graph;
 		links.clear(); tasks_id.clear();
-		size_t threadcount = MAX_threads;
 		Target* RootTarget = bg->TargetFromId(target_id);
 		if (Verifying(target_id)) { cout << "Links OK!\n"; }
 		else { cout << "Links Error!\n"; throw std::exception("Builder::exeute can not make a proper task queue"); };
