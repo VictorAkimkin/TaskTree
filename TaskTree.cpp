@@ -159,10 +159,9 @@ public:
 	void execute(const BuildGraph& build_graph, size_t target_id)
 	{
 		bg = &build_graph;
-		links.clear(); tasks_id.clear();
 		Target* RootTarget = bg->TargetFromId(target_id);
 		if (Verifying(target_id)) { cout << "Links OK!\n"; }
-		else { cout << "Links Error!\n"; throw std::exception("Builder::exeute can not make a proper task queue"); };
+		else { links.clear(); cout << "Links Error!\n"; throw std::exception("Builder::exeute can not make a proper task queue"); };
 
 		for (auto& v : links)
 		{
